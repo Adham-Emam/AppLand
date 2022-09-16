@@ -1,0 +1,352 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --header: #333;
+  --paragraph: #aaa;
+  --light-green: #3e3;
+  --dark-green: #3a3;
+  --light-blue: #235fcc;
+  --dark-blue: #012c88;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Cairo", sans-serif;
+  color: var(--paragraph);
+  position: relative;
+}
+.section-title {
+  width: fit-content;
+  margin: 30px auto;
+  font-size: 35px;
+  color: var(--header);
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+section {
+  padding: 50px 0;
+  position: relative;
+}
+section:not(#more)::before {
+  content: "";
+  background-color: #bbb;
+  width: 20%;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* Start nav */
+nav {
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .home img {
+  height: 75px;
+}
+nav .home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav .home {
+  text-decoration: none;
+  color: var(--header);
+  font-size: 30px;
+  font-weight: 600;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+}
+nav ul li a {
+  padding: 10px;
+  text-decoration: none;
+  color: var(--header);
+  font-size: 20px;
+}
+nav ul li a:hover {
+  color: var(--light-green);
+}
+nav .container i {
+  display: none;
+}
+/* End nav */
+/* Start Landing */
+#landing .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(100vh - 100px);
+}
+#landing .container img {
+  max-width: 50%;
+}
+#landing .container div h1 {
+  color: var(--header);
+  font-size: 35px;
+}
+#landing .container div p {
+  margin: 20px 0;
+}
+#landing .container div a {
+  background-color: var(--light-green);
+  color: white;
+  text-decoration: none;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 20px 20px 20px 0;
+  display: inline-block;
+  box-shadow: 0 5px 5px 2px var(--dark-green);
+  transition-duration: 0.3s;
+}
+#landing .container div a:last-child {
+  background-color: var(--light-blue);
+  box-shadow: 0 5px 5px 2px var(--dark-blue);
+}
+#landing .container div a:focus,
+#landing .container div a:hover {
+  background-color: var(--dark-green);
+  transform: scale(1.1);
+}
+#landing .container div a:last-child:focus,
+#landing .container div a:last-child:hover {
+  background-color: var(--dark-blue);
+}
+#landing .container div a i {
+  font-size: 20px;
+  padding: 10px;
+}
+/* End Landing */
+/* Start Features */
+#features .container {
+  display: flex;
+  align-items: center;
+  gap: 0 50px;
+}
+#features .container img {
+  min-width: 45%;
+  max-width: 100%;
+}
+#features .container > div {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+#features .container div div {
+  margin: 30px 0;
+}
+#features .container i {
+  color: var(--light-green);
+  font-size: 25px;
+}
+#features .container h3 {
+  color: var(--header);
+  display: inline-block;
+  margin-left: 20px;
+}
+/* End Features */
+/* Start Cool Features */
+#cool-features .container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#cool-features .container img {
+  max-height: 500px;
+}
+#cool-features .container div {
+  width: 50%;
+  margin: 30px 0;
+}
+#cool-features .container div h3 {
+  margin: 20px 0;
+  color: var(--header);
+  width: 100%;
+}
+#cool-features .container div i {
+  background-color: var(--light-green);
+  color: white;
+  padding: 10px;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+/* End Cool Features */
+/* Start Screenshots */
+#screenshots .container {
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+#screenshots .container div {
+  background-color: white;
+  width: 25%;
+  position: relative;
+  overflow: hidden;
+  border: 5px solid white;
+  box-shadow: 5px 5px 5px 0 #aaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#screenshots .container img {
+  width: 100%;
+  transition-duration: 0.3s;
+}
+#screenshots .container div:hover img {
+  transform: rotate(3deg) scale(1.15);
+}
+#screenshots .container div::before {
+  content: "";
+  width: 0%;
+  height: 0%;
+  background-color: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+#screenshots .container div:hover::before {
+  animation: flashing 0.5s ease-in-out 1;
+  animation-fill-mode: forwards;
+}
+@keyframes flashing {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: 300%;
+    height: 300%;
+  }
+}
+/* End Screenshots */
+/* Start more */
+#more .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#more .container h3 {
+  color: var(--header);
+}
+#more .container a {
+  background-color: var(--light-blue);
+  color: white;
+  text-decoration: none;
+  padding: 5px 30px;
+  border-radius: 5px;
+  transition-duration: 0.3s;
+}
+#more .container a:hover {
+  background-color: var(--dark-blue);
+}
+/* End more */
+/* Start footer */
+footer {
+  background-color: #000011;
+  padding: 20px 0;
+  color: white;
+}
+footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+footer a:hover {
+  color: var(--light-green);
+}
+footer span {
+  color: var(--light-blue);
+}
+/* End footer */
+/* start go-up */
+.go-up {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 100;
+}
+.go-up i {
+  background-color: var(--light-blue);
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  transition-duration: 0.3s;
+}
+.go-up i:hover {
+  background-color: var(--light-green);
+}
+/* End go-up */
+@media (max-width: 991.98px) {
+  #landing .container {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  #features .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  #features .container h3 {
+    display: block;
+    margin: 10px 0;
+  }
+  #cool-features .container {
+    flex-direction: column;
+  }
+  #cool-features .container div {
+    width: 100%;
+    text-align: center;
+  }
+  #screenshots .container {
+    flex-wrap: wrap;
+  }
+  #screenshots .container div {
+    flex-basis: 45%;
+  }
+  #more .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  #more .container div {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 767.98px) {
+  nav .container ul {
+    display: none;
+  }
+  nav .container i {
+    display: block !important;
+    font-size: 30px;
+  }
+  #screenshots .container div {
+    flex-basis: 100%;
+  }
+  footer .container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
